@@ -33,11 +33,13 @@ def pick_item(sushi):
     choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind: "))
 
     while choise != 0:
-        if choise == 1 or 2 or 3 or 4 or 5:
-            print(f"You have selected {sushi[choise -1]}")
+        if choise == 1 or choise == 2 or choise == 3 or choise == 4 or choise == 5:
+            print(f"\nYou have selected {sushi[choise -1]} \n")
             break
         else:
-            print("You have entered an invalid number")
+            print("\nYou have entered an invalid number, please choose number 1-5 \n")
+            pick_item(sushi)
+            break
     # while True:
     #     choise = input("Please enter the number of the roll that you want to order, or press 'q' if you have changed your mind: ")
     #     if choise.lower() == "q":
