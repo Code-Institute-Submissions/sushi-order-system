@@ -26,25 +26,37 @@ def startup_menue():
 # Credit to scb at stack overflow
     print("\n".join("{} {}".format(x, y) for x, y in zip(sushi, prices)))
 
-    while True:
-        choise = input("Please enter the number of the roll that you want to order, or press 'q' if you have changed your mind: ")
-        if choise.lower() == "q":
+    pick_item(sushi)
+
+def pick_item(sushi):
+
+    choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind: "))
+
+    while choise != 0:
+        if choise == 1 or 2 or 3 or 4 or 5:
+            print(f"You have selected {sushi[choise -1]}")
             break
         else:
-            #price = float(input(f"Enter the price of a {food}: $"))
-            choises.append(choise)
-            prices.append(price)
+            print("You have entered an invalid number")
+    # while True:
+    #     choise = input("Please enter the number of the roll that you want to order, or press 'q' if you have changed your mind: ")
+    #     if choise.lower() == "q":
+    #         break
+    #     else:
+    #         #price = float(input(f"Enter the price of a {food}: $"))
+    #         choises.append(choise)
+    #         prices.append(price)
 
 main()
 
-print("----- YOUR CART -----")
+# print("----- YOUR CART -----")
 
-for food in foods:
-    print(food, end=" ")
+# for food in foods:
+#     print(food, end=" ")
 
-for price in prices:
-    total += price
+# for price in prices:
+#     total += price
 
-print()
-print(f"Your total is: ${total}")
+# print()
+# print(f"Your total is: ${total}")
 
