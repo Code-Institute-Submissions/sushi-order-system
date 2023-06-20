@@ -1,5 +1,6 @@
 # Shopping cart exercise
 
+sushi = ["1.  Dragon Roll", "2.  Rainbow Roll", "3.  Salmon Roll", "4.  Crispy Roll", "5.  Tempura Roll"]
 MISO = 0.5
 prices = [1.7, 1.2, 1, 1.5, 1.6]
 choises = []
@@ -12,8 +13,6 @@ def main():
 
 def startup_menue():
 
-    sushi = ["1.  Dragon Roll", "2.  Rainbow Roll", "3.  Salmon Roll", "4.  Crispy Roll", "5.  Tempura Roll"]
-
     print(
         """
         *************************************************
@@ -23,7 +22,7 @@ def startup_menue():
         *************************************************
         """
     )
-# Credit to scb at stack overflow
+    # Credit to scb at stack overflow
     print("\n".join("{} {}".format(x, y) for x, y in zip(sushi, prices)))
 
     pick_item(sushi)
@@ -34,10 +33,19 @@ def pick_item(sushi):
 
     while choise != 0:
         if choise == 1 or choise == 2 or choise == 3 or choise == 4 or choise == 5:
-            print(f"\nYou have selected {sushi[choise -1]} \n")
-            break
+            print(f"\nYou have selected {sushi[choise -1]} which costs {prices[choise -1]} euros.\n")
+            amount = int(input("How many pieces would you like? \n"))
+            if amount > 0 and amount < 50:
+                price = prices[choise -1]
+                choise_costs.append(price * amount)
+            else:
+                print("\nYou have entered invalid data, please try again.\n")
+                break
+            choises.append(sushi[choise -1])
+            print(choises)
+            print(choise_costs)
         else:
-            print("\nYou have entered an invalid number, please choose number 1-5 \n")
+            print("\nYou have entered a number that does not exist on our menue, please choose number 1-5 \n")
             pick_item(sushi)
             break
     # while True:
@@ -45,7 +53,7 @@ def pick_item(sushi):
     #     if choise.lower() == "q":
     #         break
     #     else:
-    #         #price = float(input(f"Enter the price of a {food}: $"))
+    #         price = float(input(f"Enter the price of a {food}: $"))
     #         choises.append(choise)
     #         prices.append(price)
 
