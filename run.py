@@ -47,11 +47,11 @@ def pick_item(sushi):
                 break
             # Datavalidation for correct input data 1-5             
             else:
-                print("\nYou have entered a number that does not exist on our menu, please choose number 1-5 \n")
+                print("\nYou have entered a number that is not provided in the menu, please choose number 1-5 \n")
                 pick_item(sushi)
                 break
     except:
-        print("\nYou have entered invalid data, please try again.\n")
+        print("\nSorry! You have entered invalid data, please try again.\n")
         pick_item(sushi)
 
 
@@ -73,14 +73,14 @@ def pick_amount(choise):
             elif order_more.lower() == "n":
                 order_summary()
             else:
-                print("\nYou have entered invalid data, please try again.\n")
+                print("\nSorry! You have entered invalid data, please try again.\n")
                 pick_amount(choise)
         # Datavalidation for correct input data           
         else:
-            print("\nYou have entered invalid data, please try again.\n")
+            print("\nSorry! You have entered invalid data, please try again.\n")
             pick_amount(choise)
     except:
-        print("\nYou have entered invalid data, please try again.\n")
+        print("\nSorry! You have entered invalid data, please try again.\n")
         pick_amount(choise)
 
 
@@ -95,7 +95,7 @@ def order_summary():
     elif order_miso.lower() == "n":
         finalize_order()
     else:
-        print("\nYou have entered invalid data, please try again.\n")
+        print("\nSorry! You have entered invalid data, please try again.\n")
         order_summary()
 
 
@@ -110,7 +110,7 @@ def pick_miso():
         total += (0.5 * miso_amount)
         finalize_order()
     else:
-        print("\nYou have entered invalid data, please try again.\n")
+        print("\nSorry! You have entered invalid data, please try again.\n")
         pick_miso()
 
         
@@ -133,7 +133,7 @@ def finalize_order():
         total = 0
         main()
     else:
-        print("\nYou have entered invalid data, please try again.\n")
+        print("\nSorry! You have entered invalid data, please try again.\n")
         finalize_order()
 
 
