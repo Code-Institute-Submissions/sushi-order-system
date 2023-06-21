@@ -9,7 +9,7 @@ total = 0
 
 def main():
     welcome()
-    startup_menue()
+    startup_menu()
     
 
 def welcome():
@@ -17,15 +17,15 @@ def welcome():
     print(
         """
         *************************************************
-        * Welcome to sushi paradise ordering system!    *
+        * Welcome to sushi Paradise Ordering System!    *
         *                                               *
-        * Please order from the menue below             *
+        * Please order from the menu below             *
         *************************************************
         """
     )
     
 
-def startup_menue():
+def startup_menu():
 
     # Credit to scb at stack overflow
     print("\n".join("{} {}".format(x, y) for x, y in zip(sushi, prices)))
@@ -49,7 +49,7 @@ def pick_item(sushi):
                 total += (price * amount)
                 order_more = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
                 if order_more.lower() == "y":
-                    startup_menue()
+                    startup_menu()
                 elif order_more.lower() == "n":
                     order_summary()
                     break
@@ -65,7 +65,7 @@ def pick_item(sushi):
             
             break
         else:
-            print("\nYou have entered a number that does not exist on our menue, please choose number 1-5 \n")
+            print("\nYou have entered a number that does not exist on our menu, please choose number 1-5 \n")
             pick_item(sushi)
             break
 
@@ -81,7 +81,35 @@ def order_summary():
 
     print("\n".join("{} {} {}".format(x, y, z) for x, y, z in zip(choises, chosen_amount, choise_costs)))
     print(str(round(total, 2)))
-order_miso = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
+    order_miso = str(input("Would you also want some miso for a cost of 0.5€ per serving? If you do, please press y. If not, press n. \n"))
+    if order_miso.lower() == "y":
+        pick_miso()
+    elif order_miso.lower() == "n":
+        finalize_order()
+    else:
+        print("\nYou have entered invalid data, please try again.\n")
+        order_summary()
+
+
+def pick_miso():
+    miso_amount = int(input("How many servings would you like? \n"))
+    if miso_amount > 0 and miso_amount < 50:
+        choise_costs.append(str(round(0.5 * miso_amount, 2)) + " €")
+        chosen_amount.append(str(miso_amount) + " servings")
+        choises.append("Miso soup")
+        global total
+        total += (0.5 * miso_amount)
+        finalize_order()
+    else:
+        print("\nYou have entered invalid data, please try again.\n")
+        pick_miso()
+        
+
+def finalize_order():
+    print("Finalize")
+    print("\n".join("{} {} {}".format(x, y, z) for x, y, z in zip(choises, chosen_amount, choise_costs)))
+    print(str(round(total, 2)))
+
 main()
 
 # print("----- YOUR CART -----")
