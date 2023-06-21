@@ -67,28 +67,32 @@ def pick_amount(choise):
             choises.append(sushi[choise - 1])
             global total
             total += (price * amount)
-            order_more = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
-            if order_more.lower() == "y":
-                startup_menu()
-            elif order_more.lower() == "n":
-                order_summary()
-            else:
-                print("\nSorry! You have entered invalid data, please try again.\n")
-                pick_amount(choise)
+            order_more()
         # Datavalidation for correct input data           
         else:
-            print("\nSorry! You have entered invalid data, please try again.\n")
+            print("\OOPS! You have entered a number that is not accepted, please choose a number between 1 and 50.\n")
             pick_amount(choise)
     except:
-        print("\nSorry! You have entered invalid data, please try again.\n")
+        print("\nWOOPS! You have entered invalid data, please try again.\n")
         pick_amount(choise)
 
 
+def order_more():
+    more_sushi = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
+    if more_sushi.lower() == "y":
+        startup_menu()
+    elif more_sushi.lower() == "n":
+        order_summary()
+    else:
+        print("\nSorry! You have entered invalid data, please try again.\n")
+        order_more()
+
+
 def order_summary():
-# Total amount and cost from the order
+    # Total amount and cost from the order
     print("\n".join("{} {} {}".format(x, y, z) for x, y, z in zip(choises, chosen_amount, choise_costs)))
     print(str(round(total, 2)) + " €")
-#Function for miso order 
+    #Function for miso order 
     order_miso = str(input("Would you also want some miso for a cost of 0.5€ per serving? If you do, please press y. If not, press n. \n"))
     if order_miso.lower() == "y":
         pick_miso()
@@ -98,21 +102,23 @@ def order_summary():
         print("\nSorry! You have entered invalid data, please try again.\n")
         order_summary()
 
-
 # Miso order amount function
 def pick_miso():
     miso_amount = int(input("How many servings would you like? \n"))
-    if miso_amount > 0 and miso_amount < 50:
-        choise_costs.append(str(round(0.5 * miso_amount, 2)) + " €")
-        chosen_amount.append(str(miso_amount) + " servings")
-        choises.append("Miso soup")
-        global total
-        total += (0.5 * miso_amount)
-        finalize_order()
-    else:
-        print("\nSorry! You have entered invalid data, please try again.\n")
+    try:
+        if miso_amount > 0 and miso_amount < 50:
+            choise_costs.append(str(round(0.5 * miso_amount, 2)) + " €")
+            chosen_amount.append(str(miso_amount) + " servings")
+            choises.append("Miso soup")
+            global total
+            total += (0.5 * miso_amount)
+            finalize_order()
+        else:
+            print("\nSorry! You have entered invalid data, please try again.\n")
+            pick_miso()
+    except:
+        print("\OOPS! You have entered invalid data, please try again.\n")
         pick_miso()
-
         
 # Final order cost and choises function
 def finalize_order():
