@@ -7,6 +7,7 @@ choises = []
 choise_costs = []
 chosen_amount = []
 total = 0
+
 # Main program
 def main():
     welcome()
@@ -34,43 +35,53 @@ def startup_menu():
 
     pick_item(sushi)
 
+
 def pick_item(sushi):
 
-    choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind: "))
-    # Amount and cost function for sushi ordering system
-    while choise != 0:
-        if choise == 1 or choise == 2 or choise == 3 or choise == 4 or choise == 5:
-            print(f"\nYou have selected {sushi[choise -1]} which costs {prices[choise -1]} euros.\n")
-            amount = int(input("How many pieces would you like? \n"))
-            # Datavalidation for correct input data
-            if amount > 0 and amount < 50:
-                price = prices[choise -1]
-                choise_costs.append(str(round(price * amount, 2)) + " €")
-                chosen_amount.append(str(amount) + " pcs")
-                choises.append(sushi[choise -1])
-                global total
-                total += (price * amount)
-                order_more = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
-                if order_more.lower() == "y":
-                    startup_menu()
-                elif order_more.lower() == "n":
-                    order_summary()
-                    break
-                else:
-                    print("\nYou have entered invalid data, please try again.\n")
-                    pick_item(sushi)
-                    break
-            # Datavalidation for correct input data           
+    try:
+        choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind: "))
+        # Amount and cost function for sushi ordering system
+        while choise != 0:
+            if choise == 1 or choise == 2 or choise == 3 or choise == 4 or choise == 5:
+                pick_amount(choise)
+                break
+            # Datavalidation for correct input data 1-5             
             else:
-                print("\nYou have entered invalid data, please try again.\n")
+                print("\nYou have entered a number that does not exist on our menu, please choose number 1-5 \n")
                 pick_item(sushi)
                 break
-            break
-        # Datavalidation for correct input data 1-5             
+    except:
+        print("\nYou have entered invalid data, please try again.\n")
+        pick_item(sushi)
+
+
+def pick_amount(choise):
+    print(f"\nYou have selected {sushi[choise - 1]} which costs {prices[choise - 1]} euros.\n")
+    try:
+        amount = int(input("How many pieces would you like? \n"))
+        # Datavalidation for correct input data
+        if amount > 0 and amount < 50:
+            price = prices[choise - 1]
+            choise_costs.append(str(round(price * amount, 2)) + " €")
+            chosen_amount.append(str(amount) + " pcs")
+            choises.append(sushi[choise - 1])
+            global total
+            total += (price * amount)
+            order_more = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
+            if order_more.lower() == "y":
+                startup_menu()
+            elif order_more.lower() == "n":
+                order_summary()
+            else:
+                print("\nYou have entered invalid data, please try again.\n")
+                pick_amount(choise)
+        # Datavalidation for correct input data           
         else:
-            print("\nYou have entered a number that does not exist on our menu, please choose number 1-5 \n")
-            pick_item(sushi)
-            break
+            print("\nYou have entered invalid data, please try again.\n")
+            pick_amount(choise)
+    except:
+        print("\nYou have entered invalid data, please try again.\n")
+        pick_amount(choise)
 
 
 def order_summary():
@@ -87,6 +98,7 @@ def order_summary():
         print("\nYou have entered invalid data, please try again.\n")
         order_summary()
 
+
 # Miso order amount function
 def pick_miso():
     miso_amount = int(input("How many servings would you like? \n"))
@@ -100,6 +112,7 @@ def pick_miso():
     else:
         print("\nYou have entered invalid data, please try again.\n")
         pick_miso()
+
         
 # Final order cost and choises function
 def finalize_order():
