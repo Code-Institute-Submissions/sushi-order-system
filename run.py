@@ -31,15 +31,17 @@ def welcome():
 def startup_menu():
 
     # Credit to scb at stack overflow
+    print("*" * 20)
     print("\n".join("{} {} {}".format(x, y, z) for x, y, z in zip(sushi, prices, euros)))
-
+    print("*" * 20)
+    print("")
     pick_item(sushi)
 
 
 def pick_item(sushi):
 
     try:
-        choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind: "))
+        choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind:\n"))
         # Amount and cost function for sushi ordering system
         while choise != 0:
             if choise == 1 or choise == 2 or choise == 3 or choise == 4 or choise == 5:
@@ -58,7 +60,7 @@ def pick_item(sushi):
 def pick_amount(choise):
     print(f"\nYou have selected {sushi[choise - 1]} which costs {prices[choise - 1]} euros.\n")
     try:
-        amount = int(input("How many pieces would you like? \n"))
+        amount = int(input("How many pieces would you like?\n"))
         # Datavalidation for correct input data
         if amount > 0 and amount < 50:
             price = prices[choise - 1]
@@ -78,7 +80,7 @@ def pick_amount(choise):
 
 
 def order_more():
-    more_sushi = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n. \n"))
+    more_sushi = str(input("Would you like to order more from the menu? If you do, please press y. If not, press n.\n"))
     if more_sushi.lower() == "y":
         startup_menu()
     elif more_sushi.lower() == "n":
@@ -90,10 +92,15 @@ def order_more():
 
 def order_summary():
     # Total amount and cost from the order
+    print("")
+    print("*" * 30)
     print("\n".join("{} {} {}".format(x, y, z) for x, y, z in zip(choises, chosen_amount, choise_costs)))
-    print(str(round(total, 2)) + " €")
+    print("*" * 30)
+    print(f"Total cost: {str(round(total, 2))} €")
+    print("*" * 20)
+    print("")
     #Function for miso order 
-    order_miso = str(input("Would you also want some miso for a cost of 0.5€ per serving? If you do, please press y. If not, press n. \n"))
+    order_miso = str(input("Would you also want some miso for a cost of 0.5€ per serving? If you do, please press y. If not, press n.\n"))
     if order_miso.lower() == "y":
         pick_miso()
     elif order_miso.lower() == "n":
@@ -104,8 +111,8 @@ def order_summary():
 
 # Miso order amount function
 def pick_miso():
-    miso_amount = int(input("How many servings would you like? \n"))
     try:
+        miso_amount = int(input("How many servings would you like?\n"))
         if miso_amount > 0 and miso_amount < 50:
             choise_costs.append(str(round(0.5 * miso_amount, 2)) + " €")
             chosen_amount.append(str(miso_amount) + " servings")
@@ -126,10 +133,15 @@ def finalize_order():
     global choise_costs
     global chosen_amount
     global total
+    print("")
     print("This is your final order summary: ")
+    print("*" * 40)
     print("\n".join("{} {} {}".format(x, y, z) for x, y, z in zip(choises, chosen_amount, choise_costs)))
+    print("*" * 40)
     print(f"Your total cost for this order is {str(round(total, 2))} €")
-    checkout = str(input("Would you like to continue and finalize your order? To proceed to checkout press y, to cancel order press n \n"))
+    print("*" * 40)
+    print("")
+    checkout = str(input("Would you like to continue and finalize your order? To proceed to checkout press y, to cancel order press n:\n"))
     if checkout.lower() == "y":
         final_order()
     elif checkout.lower() == "n":
@@ -144,6 +156,7 @@ def finalize_order():
 
 
 def final_order():
+    print("")
     print("Thank you so much for ordering from Sushi Paradise! Come again! Hai! Kampai!")
 
 
