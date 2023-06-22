@@ -42,4 +42,36 @@ Follow along as I take you through all the steps to complete an order.
 5. When you press n, your sushi cart will be displayed with the cost you are up to. Now you will also be asked if you want some miso with your sushi. We will press y.
 ![Step 5](./readme.images/step-5.png)
 
-6. 
+6. Now we can choose how many servings we want and then press enter.
+![Step 6](./readme.images/step-6.png)
+
+7. In this step, your order summary will appear with the number of sushi and miso dishes. Here you can now proceed to checkout. We will press yes.
+![Step 7](./readme.images/step-7.png)
+
+8. When we press y, a thank you text appears that reads: Thank you for ordering from Sushi Paradise! Come again! Hai! Campaign!
+![Step 8](./readme.images/step-8.png)
+
+## Future feature left to implement
+---
+ - Drinks ordering
+ - Ingredients on a separate page when choosing dishes
+ 
+ ## Technologies Used
+ ---
+- Python
+- GitHub
+- Gitpod
+- Heroku
+- LucidChart
+
+## Testing and Validation
+---
+### PEP8
+- The code was checked with PEP8 validator and passed with no error found.
+- All features have been tested manually with different kind of laptops.
+
+### Unfixed Bugs
+- None that I'm aware of at the moment.
+
+## Deployment
+---
