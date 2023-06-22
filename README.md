@@ -75,3 +75,33 @@ Follow along as I take you through all the steps to complete an order.
 
 ## Deployment
 ---
+ There is only this main branch of the project version available in GitHub. This version is also deployed live on Heroku.
+
+### How to deploy
+- To deploy this page to Heroku from its GitHub repository the following steps were taken:
+
+- Log into or register a new account at Heroku.
+
+- Click on the button New in the top right corner of the dashboard.
+
+- From the drop-down menu then select Create new app.
+
+- Enter your app name in the first field, the names must be unique so check that then name you have chosen is available on Heroku, then select your region.
+
+- Click on Create App.
+
+- Once the app is created you will see the Overview panel of the application. Now move to the Settings tab.
+
+- Scroll down to Buildpacks. Click the button Add buildpack and select 'python'. Do the same step and add 'node.js'. PYTHON MUST BE ON TOP OF THE BUILDPACKS. if in your case node.js is first, click and drag Python to top and save.
+
+- Return back to the Deploy tab. From the deployment method, select 'Github' as the deployment.
+
+- You will be asked to connect your github account. Confirm and proceed.
+
+- Search for your repository name and connect.
+
+- Once that is done and successfully connected, select how you want to push updates from the following options.
+
+- Clicking Enable Automatic Deploys. This will update once you push updates to your Github.
+
+- Selecting the correct branch for deployment from drop-down menu and pressing Deploy Branch button. This will have to be done everytime manually.
