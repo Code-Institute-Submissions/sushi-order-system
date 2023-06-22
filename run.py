@@ -41,7 +41,7 @@ def startup_menu():
 def pick_item(sushi):
 
     try:
-        choise = int(input("Please enter the number of the roll that you want to order, or press '0' if you have changed your mind:\n"))
+        choise = int(input("Please enter the number of the roll that you want to order, then press enter. or press '0' if you have changed your mind:\n"))
         # Amount and cost function for sushi ordering system
         while choise != 0:
             if choise == 1 or choise == 2 or choise == 3 or choise == 4 or choise == 5:
