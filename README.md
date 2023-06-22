@@ -32,5 +32,14 @@ Follow along as I take you through all the steps to complete an order.
 
 2. Now you choose a number and then press enter. 
 ![Step 2](./readme.images/step-2.png)
-3. Now you have chosen a suchi dish and now you have to choose how many pieces there should be.
+
+3. Now you have chosen a suchi dish and now you have to choose how many pieces there should be and press enter. The chosen amount is now in your cart and the system will ask you if you want to order some more ( y=yes, n=no). We will press y.
 ![Step 3](./readme.images/step-3.png)
+
+4. It goes without saying that you cannot have too much sushi, at this stage you may now choose a new type of sushi. push on the right number you want then press enter. Now the the system will ask you if you want to order some more and we will press no.
+![Step 4](./readme.images/step-4.png)
+
+5. When you press n, your sushi cart will be displayed with the cost you are up to. Now you will also be asked if you want some miso with your sushi. We will press y.
+![Step 5](./readme.images/step-5.png)
+
+6. 
