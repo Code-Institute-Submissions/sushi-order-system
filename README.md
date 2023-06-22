@@ -7,20 +7,30 @@ welcome all sushi lovers. Here I have created an order program where the user ca
 ![Start Page](./readme.images/startup-page.png)
 
 ## Navigation
---- 
+- [Goals](#goals)
+- [Flow Chart](#flow-chart)
+- [Features](#features)
+- [Future feature left to implement](#future-feature-left-to-implement)
+- [Technologies Used](#technologies-used)
+- [Testing and Validation](#testing-and-validation)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 ## Goals
----
+
 ### User goal
   - The goal of this system is to give the user the opportunity to order sushi at the touch of a button to bring home amazing food without talking to anyone.
+
 ### Website owners goals
   - Offer a simple order system.
   Give information to the user what the next step is and explain how to proceed to a full order.
+
 ## Flow Chart
----
+
 To create the structure of the order system, this diagram was created using Lucid Charts.
 ![Flow Chart](./readme.images/flowchart.png)
 ## Features
----
+
 ### Order
 
 - You are now welcomed to the front page and here you have the opportunity to start your order. 
@@ -33,7 +43,7 @@ Follow along as I take you through all the steps to complete an order.
 2. Now you choose a number and then press enter. 
 ![Step 2](./readme.images/step-2.png)
 
-3. Now you have chosen a suchi dish and now you have to choose how many pieces there should be and press enter. The chosen amount is now in your cart and the system will ask you if you want to order some more ( y=yes, n=no). We will press y.
+3. Now you have chosen a sushi dish and now you have to choose how many pieces there should be and press enter. The chosen amount is now in your cart and the system will ask you if you want to order some more ( y=yes, n=no). We will press y.
 ![Step 3](./readme.images/step-3.png)
 
 4. It goes without saying that you cannot have too much sushi, at this stage you may now choose a new type of sushi. push on the right number you want then press enter. Now the the system will ask you if you want to order some more and we will press no.
@@ -52,12 +62,12 @@ Follow along as I take you through all the steps to complete an order.
 ![Step 8](./readme.images/step-8.png)
 
 ## Future feature left to implement
----
+
  - Drinks ordering
  - Ingredients on a separate page when choosing dishes
  
  ## Technologies Used
- ---
+ 
 - Python
 - GitHub
 - Gitpod
@@ -65,7 +75,7 @@ Follow along as I take you through all the steps to complete an order.
 - LucidChart
 
 ## Testing and Validation
----
+
 ### PEP8
 - The code was checked with PEP8 validator and passed with no error found.
 - All features have been tested manually with different kind of laptops.
@@ -74,7 +84,7 @@ Follow along as I take you through all the steps to complete an order.
 - None that I'm aware of at the moment.
 
 ## Deployment
----
+
  There is only this main branch of the project version available in GitHub. This version is also deployed live on Heroku.
 
 ### How to deploy
@@ -107,13 +117,13 @@ Follow along as I take you through all the steps to complete an order.
 - Selecting the correct branch for deployment from drop-down menu and pressing Deploy Branch button. This will have to be done everytime manually.
 
 ## Credits
----
+
 - Credit to scb at stack overflow for ideas in the project.
 - My dear friend Kristofer Gabrielsson for inputs and problemsolving.
 - Code Institute, Love sandwiches 
 
 ## Acknowledgements
----
+
 The site was completed as a Portfolio 3 Project for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute.
 - I would like to thank Cohort Facilitator Alan Bushell, at Code Institute for the support and never doubt me.
 - My friend Kristofer Gabrielsson, you are the best!
