@@ -120,8 +120,8 @@ Follow along as I take you through all the steps to complete an order.
 
 - Credit to scb at stack overflow for ideas in the project.
 - My dear friend Kristofer Gabrielsson for inputs and problemsolving.
-- Code Institute, Love sandwiches 
-
+- Code Institute, Love sandwiches.
+- alessandracosta8 at GitHub for readme ideas.
 ## Acknowledgements
 
 The site was completed as a Portfolio 3 Project for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute.
