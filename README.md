@@ -105,3 +105,15 @@ Follow along as I take you through all the steps to complete an order.
 - Clicking Enable Automatic Deploys. This will update once you push updates to your Github.
 
 - Selecting the correct branch for deployment from drop-down menu and pressing Deploy Branch button. This will have to be done everytime manually.
+
+## Credits
+---
+- Credit to scb at stack overflow for ideas in the project.
+- My dear friend Kristofer Gabrielsson for inputs and problemsolving.
+- Code Institute, Love sandwiches 
+
+## Acknowledgements
+---
+The site was completed as a Portfolio 3 Project for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute.
+- I would like to thank Cohort Facilitator Alan Bushell, at Code Institute for the support and never doubt me.
+- My friend Kristofer Gabrielsson, you are the best!
